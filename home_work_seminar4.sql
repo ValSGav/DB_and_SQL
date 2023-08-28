@@ -434,7 +434,7 @@ WHERE
 SELECT
 	usr.firstname as 'Имя',
     usr.lastname as 'Фамилия', 
-    COUNT(msg.id)
+    COUNT(msg.id) as likes
 FROM
 	messages as msg
 		JOIN users as usr
@@ -445,3 +445,6 @@ WHERE usr_to.firstname = 'Reuben'
 GROUP BY
 	usr.firstname,
     usr.lastname
+ORDER BY likes DESC
+LIMIT 1
+	
